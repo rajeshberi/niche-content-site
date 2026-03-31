@@ -1,8 +1,14 @@
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getAllArticles } from "@/lib/content";
+import { InContentAd, FooterAd } from "@/components/ad-unit";
 import type { Metadata } from "next";
 
 const SITE_URL = process.env.SITE_URL ?? "https://example.com";
+
+const AD_SLOTS = {
+  inContent: process.env.NEXT_PUBLIC_AD_SLOT_IN_CONTENT ?? "",
+  footer: process.env.NEXT_PUBLIC_AD_SLOT_FOOTER ?? "",
+};
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -106,7 +112,17 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </header>
         <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
+        {AD_SLOTS.inContent && (
+          <div className="not-prose">
+            <InContentAd slot={AD_SLOTS.inContent} />
+          </div>
+        )}
       </article>
+      {AD_SLOTS.footer && (
+        <div className="not-prose">
+          <FooterAd slot={AD_SLOTS.footer} />
+        </div>
+      )}
     </>
   );
 }
