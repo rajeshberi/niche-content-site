@@ -1,0 +1,43 @@
+{
+  "siteUrl": "https://example.com",
+  "siteName": "Content Site",
+  "defaultAuthor": "Content Site Team",
+  "categories": [
+    {
+      "slug": "getting-started",
+      "name": "Getting Started",
+      "keywords": [
+        {
+          "keyword": "how to start a blog in 2026",
+          "slug": "how-to-start-a-blog-2026",
+          "searchVolume": "high",
+          "difficulty": "medium"
+        },
+        {
+          "keyword": "best blogging platforms for beginners",
+          "slug": "best-blogging-platforms-beginners",
+          "searchVolume": "high",
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "slug": "seo",
+      "name": "SEO",
+      "keywords": [
+        {
+          "keyword": "long tail keywords strategy 2026",
+          "slug": "long-tail-keywords-strategy-2026",
+          "searchVolume": "medium",
+          "difficulty": "low"
+        },
+        {
+          "keyword": "on page seo checklist",
+          "slug": "on-page-seo-checklist",
+          "searchVolume": "high",
+          "difficulty": "medium"
+        }
+      ]
+    }
+  ]
+}

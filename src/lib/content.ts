@@ -11,6 +11,9 @@ export type Article = {
   title: string;
   description: string;
   date: string;
+  author?: string;
+  category?: string;
+  keyword?: string;
   contentHtml: string;
 };
 
@@ -32,6 +35,9 @@ export function getAllArticles(): ArticleMeta[] {
       title: data.title ?? slug,
       description: data.description ?? "",
       date: data.date ?? "",
+      author: data.author,
+      category: data.category,
+      keyword: data.keyword,
     };
   });
 
@@ -54,6 +60,9 @@ export function getArticleBySlug(slug: string): Article | null {
     title: data.title ?? slug,
     description: data.description ?? "",
     date: data.date ?? "",
+    author: data.author,
+    category: data.category,
+    keyword: data.keyword,
     contentHtml: processedContent.toString(),
   };
 }
